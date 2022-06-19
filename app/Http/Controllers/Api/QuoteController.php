@@ -23,6 +23,15 @@ class QuoteController extends Controller
         return new QuoteResource($quote);
     }
 
+    public function update(Request $request, Quote $quote)
+    {
+        $quote->update([
+            'message' => $request->message
+        ]);
+
+        return new QuoteResource($quote);
+    }
+
     public function store(Request $request)
     {
 
